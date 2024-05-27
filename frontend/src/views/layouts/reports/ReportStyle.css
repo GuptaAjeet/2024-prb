@@ -1,0 +1,70 @@
+/* .ag-theme-alpine {
+    --ag-header-height: 30px;
+    --ag-header-foreground-color: white;
+    --ag-header-background-color: #042a61;
+    --ag-header-cell-hover-background-color: rgb(80, 40, 140);
+    --ag-header-cell-moving-background-color: rgb(80, 40, 140);
+
+    --ag-header-cell-hover-foreground-color: black;
+    --ag-header-cell-moving-foreground-color: black;
+} */
+.ag-theme-alpine {
+    width: 100%;
+}
+
+.main_header {
+    /* text-align: center; */
+    justify-content: left;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    /* margin-left: 600px; */
+}
+
+.main_header:hover {
+    color: black;
+}
+
+.subheader {
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.report_header {
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-family: Calibri ;
+}
+
+/* report.js additional css */
+.page-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-wrapper {
+    flex: 1 1 0px;
+}
+
+.ag-header-span-height:not(.ag-header-span-total) {
+    border-bottom: unset;
+}
+
+.gold-header {
+    background-color: gold;
+}
+
+.silver-header {
+    background-color: silver;
+}
+
+.bronze-header {
+    background-color: chocolate;
+}

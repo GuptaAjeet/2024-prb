@@ -1,0 +1,292 @@
+select * from praband_schemes ps;
+select distinct scheme_name from prabandah_data pd order by scheme_name asc;
+select distinct scheme_name,pd.major_component from prabandah_data pd order by scheme_name asc;
+
+id	scheme_name	major_component	sub_component	activity_master_id	activity_master_name	activity_master_details_id	activity_master_details	norms	criteria_for_appraisal	scheme_id
+
+ALTER TABLE public.prabandah_data ADD scheme_id int NULL;
+
+ALTER TABLE public.prabandah_data ADD major_component_id int NULL;
+ALTER TABLE public.prabandah_data ADD activity_master_component_id int NULL;
+ALTER TABLE public.prabandah_data ADD activity_details_component_id int NULL;
+
+
+UPDATE prabandah_data
+SET scheme_id = praband_schemes.id
+FROM praband_schemes
+WHERE prabandah_data.scheme_name  = praband_schemes.title;
+
+UPDATE prabandah_data
+SET major_component_id = praband_major_component.id
+FROM praband_major_component
+WHERE prabandah_data.major_component  = praband_major_component.title;
+
+insert into praband_sub_component(scheme_id,major_component_id,title,status)select scheme_id,major_component_id,sub_component,0 from prabandah_data;
+
+-- public.praband_sub_component definition
+
+-- Drop table
+
+-- DROP TABLE public.praband_sub_component;
+
+CREATE TABLE public.praband_sub_component (
+	id bigserial NOT NULL,
+	scheme_id int4 NULL,
+	major_component_id int4 NULL,
+	title text NULL,
+	status int2 NULL
+);
+
+
+
+UPDATE prabandah_data
+SET major_component_id = praband_sub_component.id
+FROM praband_sub_component
+WHERE prabandah_data.major_component  = praband_sub_component.title;
+
+
+
+-- public.praband_activity_master definition
+
+-- Drop table
+
+-- DROP TABLE public.praband_activity_master;
+
+CREATE TABLE public.praband_activity_master (
+	id bigserial NOT NULL,
+	scheme_id int4 NOT NULL,
+	major_component_id int4 NULL,
+	sub_component_id int4 NULL,
+	serial_number varchar(250) NULL,
+	title text NULL,
+	status int2 NULL
+);
+
+
+
+select * from praband_activity_master pam  limit 10;
+
+insert into praband_activity_master(scheme_id,major_component_id,sub_component_id,serial_number, title,status)select scheme_id,major_component_id,sub_component_id,activity_master_id,activity_master_name,0  from prabandah_data;
+
+
+DROP TABLE public.praband_activity_master;
+
+CREATE TABLE public.praband_activity_master (
+	id bigserial NOT NULL,
+	scheme_id int4 NOT NULL,
+	major_component_id int4 NULL,
+	sub_component_id int4 NULL,
+	serial_number varchar(250) NULL,
+	title text NULL,
+	status int2 NULL
+);
+
+=====================
+ALTER TABLE public.praband_major_component ADD unique_code varchar NULL;
+
+UPDATE your_table_name
+SET unique_code = substr(md5(random()::text || clock_timestamp()::text), 1, 6)
+WHERE unique_code IS NULL;
+
+UPDATE praband_major_component
+SET unique_code = substr(md5(random()::text || clock_timestamp()::text), 1, 12)
+WHERE unique_code IS NULL;
+
+========================================
+select * from prb_schemes ps;
+select * from prb_major_component pmc;
+select * from prb_sub_component psc ;
+select * from prb_activity_master pam ;
+select * from prb_data pd ;
+select * from prb_plan_configurator ppc ;
+
+ALTER TABLE public.prb_schemes ALTER COLUMN unique_code TYPE varchar(255) USING unique_code::varchar;
+
+
+update prb_schemes set unique_code =null;
+
+UPDATE prb_schemes
+SET unique_code = concat('ps','',id,substr(md5(random()::text || clock_timestamp()::text), 1, 25))
+WHERE unique_code IS NULL;
+
+
+=================
+insert
+	into
+	prb_sub_component(scheme_id,
+	major_component_id,
+	title,
+	status
+)
+select
+	scheme_id,
+	major_component_id,
+	sub_component,
+	0
+from
+	prb_data group by scheme_id,major_component_id,sub_component;
+	
+	=====================
+	
+insert
+	into
+	prb_activity_master(scheme_id,
+	major_component_id,
+	sub_component_id,
+	serial_number,
+	title,
+	status
+)select
+	scheme_id,
+	major_component_id,
+	sub_component_id,
+	activity_master_id,
+	activity_master_name,
+	0
+from
+	prb_data  group by scheme_id,major_component_id,sub_component_id,activity_master_id,activity_master_name;
+======================
+
+insert
+	into
+	prb_activity_master(scheme_id,
+	major_component_id,
+	sub_component_id,
+	serial_number,
+	title,
+	status
+)select
+	scheme_id,
+	major_component_id,
+	sub_component_id,
+	activity_master_id,
+	activity_master_name,
+	0
+from
+	prb_data  group by scheme_id,major_component_id,sub_component_id,activity_master_id,activity_master_name;
+
+=============
+
+UPDATE prabandah_data
+SET scheme_id = praband_schemes.id
+FROM praband_schemes
+WHERE prabandah_data.scheme_name  = praband_schemes.title;
+
+update
+	prb_data
+set
+	activity_master_id = null,
+	scheme_id= null,
+	major_component_id= null,
+	sub_component_id= null,
+	activity_master_component_id= null;
+	
+UPDATE prb_data
+SET scheme_id = prb_schemes.unique_code
+FROM prb_schemes
+WHERE prb_data.scheme_name  = prb_schemes.title;
+
+UPDATE prb_data
+SET major_component_id = prb_major_component.unique_code
+FROM prb_major_component
+WHERE prb_data.major_component = prb_major_component.title;
+
+UPDATE prb_data
+SET sub_component_id = prb_sub_component.unique_code
+FROM prb_sub_component
+WHERE prb_data.sub_component = prb_sub_component.title;
+
+UPDATE prb_data
+SET activity_master_id = prb_activity_master.serial_number 
+FROM prb_activity_master
+WHERE prb_data.activity_master_name  = prb_activity_master.title;
+
+UPDATE prb_data
+SET activity_master_component_id = prb_activity_master.unique_code
+FROM prb_activity_master
+WHERE prb_data.sub_component = prb_activity_master.title;
+
+
+update
+	prb_data
+set
+	activity_master_component_id = prb_activity_master.unique_code
+from
+	prb_activity_master
+where
+	prb_data.activity_master_name  = prb_activity_master.title
+	and prb_data.activity_master_id = prb_activity_master.serial_number ;
+	================
+	update prb_sub_component set scheme_id = prb_data.scheme_id, 
+major_component_id =prb_data.major_component_id  
+FROM prb_data
+WHERE prb_data.sub_component = prb_sub_component.title;
+==========================
+
+update prb_activity_master set scheme_id = prb_data.scheme_id, 
+major_component_id =prb_data.major_component_id,
+sub_component_id =prb_data.sub_component_id 
+FROM prb_data
+WHERE prb_data.activity_master_name  = prb_activity_master.title;
+
+====================OCT 2023 updated DB=======================================
+TRUNCATE TABLE ONLY public.prb_major_component RESTART IDENTITY CASCADE;
+
+insert into prb_major_component(title) select distinct "Major Component" from master_heads_unit_cost order by "Major Component"  asc;
+update prb_major_component set unique_code = id+9;
+
+CREATE TABLE public.prb_major_component (
+	id bigserial NOT NULL,	
+	title varchar NOT NULL,
+	status int4 NULL,
+	unique_code varchar(255) NULL
+);
+
+update prb_major_component set unique_code = id+9;
+update prb_major_component set status = 0;
+
+ROP TABLE public.prb_sub_component;
+
+CREATE TABLE public.prb_sub_component (
+	id bigserial NOT NULL,		
+	title text NULL,
+	status int2 not null default 0,
+	unique_code varchar(255) NULL
+);
+
+insert into prb_sub_component(title)
+select distinct "Sub Component" from master_heads_unit_cost order by "Sub Component" asc;
+
+update prb_sub_component set unique_code = id+9;
+========
+
+CREATE TABLE public.prb_activity_master (
+	id bigserial NOT NULL,	
+	serial_number varchar(250) NULL,
+	title text NULL,
+	status int2 not null default 0,
+	unique_code varchar(255) NULL
+);
+
+
+insert into prb_activity_master(title)
+select distinct "Activity Master Name"  from master_heads_unit_cost order by "Activity Master Name" asc;
+
+update prb_activity_master set unique_code = id+9;
+==============
+CREATE TABLE public.prb_activity_master_details (
+	id bigserial NOT NULL,		
+	serial_number varchar(250) NULL,
+	title text NULL,
+	norms text NULL,
+	criteria_for_appraisal text NULL,
+	status int2 NULL,
+	activity_year varchar(20) NULL,
+	unique_code varchar NULL
+);
+
+
+insert into prb_activity_master_details(title)
+select distinct "Activity Master Details Name" from master_heads_unit_cost order by "Activity Master Details Name" asc;
+
+update prb_activity_master_details set unique_code = id+9,activity_year='2023',status =0;

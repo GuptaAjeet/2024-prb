@@ -1,0 +1,17 @@
+Change on Frontend
+	1. env/index.js -> 
+		let mode = "testing"; // 'local', 'dev', 'production', 'testing'
+	2. remove from package.json
+  		"homepage": "/testing",
+
+Change on Backend
+	1. Database changes
+	2. index.js
+		app.use("/apitesting/", require("./routes/router")); // 'apitesting', ''
+	3. config/env/index.js
+		BASE_URL: "http://prabandh.education.gov.in/apiprabandh/", // 'apiprabandh/', ''
+		WEB_URL: "http://prabandh.education.gov.in/testing/", // 'testing/', ''
+	4. index.js 
+		Origin : ["http://localhost:5000"] // "http://localhost:5000", "https://prabandh.education.gov.in"
+	5. 
+

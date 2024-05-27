@@ -1,0 +1,27 @@
+select * from admin_users au where au.user_mobile ='7053458816'
+
+select * from admin_users au where au.user_state_id =5 
+
+select * from master_states ms ;
+select * from master_districts md where md.district_state_id = 5
+
+
+select * from prb_plan_configurator ppc where state_id = '5'
+
+INSERT INTO public.prb_plan_configurator
+(id, activity_detail_id, state_id, district_id, prb_year, status,  final_submit, iid)
+select nextval('prb_plan_configurator_iid_seq'::regclass), pd.id ,5, 509,2023,1,0, nextval('prb_plan_configurator_iid_seq'::regclass)
+from prb_data pd 
+===============
+Mysql Query to state component.
+
+INSERT INTO public.prb_ann_wrk_pln_bdgt_data
+( state,scheme_id,  major_component_id,sub_component_id, activity_master_id,  
+activity_master_details_id, physical_quantity, financial_amount, uom, unit_cost, status,  id)
+
+SELECT 21, scheme_id, major_component_id , sub_component_id ,activity_master_id , 
+id, 0, 0, 0, 0,1, nextval('prb_ann_wrk_pln_bdgt_data_id_seq'::regclass)
+FROM public.prb_data
+where component_type = '2'
+
+

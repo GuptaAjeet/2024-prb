@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';"/> -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload"/>
+    <meta name="referrer" content="no-referrer"/>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+    <!-- <meta http-equiv="X-Frame-Options" content="deny"/> -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
+    <meta name="theme-color" content="#000000" />
+    <meta name="author" content="Web site developed by Rahul & Vinod" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"/>
+    <meta data-react-helmet="true" name="description" content="PRABANDH System for efficient management of Samagra Shiksha. States and UTs can track GoI releases, approved outlays, UDISE coverage, and submit Monthly Progress Reports online."/>
+    <meta data-react-helmet="true" name="keywords" content="prabandh, samagra shiksha, ministry of education, Department of School Education and Literacy, udise "/>
+    <meta data-react-helmet="true" name="deeplink_type" content="portal"/>
+    <meta data-react-helmet="true" name="headertitle" content="PRABANDH"/>
+    <meta data-react-helmet="true" property="og:type" content="portal"/>
+    <meta data-react-helmet="true" property="og:title" content="PRABANDH, Samagra Siksha"/>
+    <meta data-react-helmet="true" property="og:url" content="https://prabandh.education.gov.in/"/>
+    <meta data-react-helmet="true" property="og:site_name" content="PRABANDH"/>
+    <meta data-react-helmet="true" property="og:image" content="https://prabandh.education.gov.in/static/media/logo.1bf33b2b59b4a6f2079016f9712251e4.svg"/>
+    <meta data-react-helmet="true" property="og:description" content="PRABANDH System for efficient management of Samagra Shiksha. States and UTs can track GoI releases, approved outlays, UDISE coverage, and submit Monthly Progress Reports online.">
+    <meta data-react-helmet="true" itemprop="name" content="PRABANDH System for efficient management of Samagra Shiksha. States and UTs can track GoI releases, approved outlays, UDISE coverage, and submit Monthly Progress Reports online.">
+    <meta data-react-helmet="true" itemprop="description" content="PRABANDH System for efficient management of Samagra Shiksha. States and UTs can track GoI releases, approved outlays, UDISE coverage, and submit Monthly Progress Reports online.">
+    <meta data-react-helmet="true" itemprop="url" content="https://prabandh.education.gov.in/">
+    <meta data-react-helmet="true" itemprop="provider" content="prabandh">
+    <meta data-react-helmet="true" name="twitter:domain" content="https://prabandh.education.gov.in/">
+    <meta data-react-helmet="true" name="twitter:title" content="PRABANDH, Samagra Siksha">
+    <meta data-react-helmet="true" name="twitter:description" content="PRABANDH System for efficient management of Samagra Shiksha. States and UTs can track GoI releases, approved outlays, UDISE coverage, and submit Monthly Progress Reports online.">
+    <meta data-react-helmet="true" name="twitter:image" content="https://prabandh.education.gov.in/static/media/logo.1bf33b2b59b4a6f2079016f9712251e4.svg">
+    <meta data-react-helmet="true" name="twitter:url" content="https://prabandh.education.gov.in/">
+    <meta data-react-helmet="true" content="summary_large_image" name="twitter:card">
+    <meta data-react-helmet="true" name="twitter:site" content="@prabandh">
+    <meta data-react-helmet="true" name="twitter:creator" content="@prabandh">
+    <meta data-react-helmet="true" name="robots" content="max-image-preview:large">
+    <meta data-react-helmet="true" name="grx:image" content="https://prabandh.education.gov.in/static/media/logo.1bf33b2b59b4a6f2079016f9712251e4.svg">
+    <meta data-react-helmet="true" itemprop="image" content="https://prabandh.education.gov.in/static/media/logo.1bf33b2b59b4a6f2079016f9712251e4.svg">
+    <meta name="apple-mobile-web-app-title" content="prabandh.education.gov.in">
+    <meta name="application-name" content="prabandh.education.gov.in">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>PRABANDH : Project Appraisal, Budgeting, Achievements and Data Handling System</title>
+    <script src="%PUBLIC_URL%/jquery-3.6.0.slim.min.js"></script>
+    <!-- <script type="text/javascript">
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script> -->
+      </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+  </body>
+  <script>
+    $("document").ready(function () {
+
+      setTimeout(()=>{
+        if($('body').width()<767){
+          $(".overlay").show()
+        }
+      }, 300)
+      
+
+      $("body").on("click", ".dashboard-chevron-left", function () {
+        var hasClass = $(this).hasClass("bi-chevron-left");
+        if (hasClass) {
+          $("body").find(".sidebar-logo").hide();
+          $("body").find(".sidebar-inner").hide();
+          $("body").find(".sidebar").css({ marginLeft: "-300px" });
+          $("body").find(".navbar").css({ margin: "0 0 0 0" });
+          $("body").find("#content").css({ marginLeft: "0px" });
+          
+          const dashboardRemainingPart = document.querySelector(".dashboard--remaining--width");
+          dashboardRemainingPart.style.marginLeft = "0px";
+          dashboardRemainingPart.style.width = "100%";
+          
+          $(this).removeClass("bi-chevron-left");
+          $(this).addClass("bi-chevron-right");
+          
+        } else {
+          $("body").find(".sidebar-logo").show();
+          $("body").find(".sidebar-inner").show();
+          $("body").find(".sidebar").css({ marginLeft: "0px" });
+          $("body").find(".navbar").css({ margin: "0 0 0 300px" });
+          $("body").find("#content").css({ marginLeft: "300px" });
+          const dashboardRemainingPart = document.querySelector(".dashboard--remaining--width");
+          dashboardRemainingPart.style.marginLeft = "300px";
+          dashboardRemainingPart.style.width = "calc(100% - 300px)";
+          $(this).removeClass("bi-chevron-right");
+          $(this).addClass("bi-chevron-left");
+        }
+
+        if($('body').width()<767){
+          if (hasClass) {
+            $(".overlay").hide()
+          } else {
+            $(".overlay").show()
+          }
+        }
+        
+      });
+    });
+
+  </script>
+</html>

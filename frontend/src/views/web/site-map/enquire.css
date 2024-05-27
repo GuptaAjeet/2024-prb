@@ -1,0 +1,26 @@
+.sec-title::after {width: 60px;}
+.card-custom {border-radius: 6px; position: relative; z-index: 2;}
+.contact-img {position: absolute; right: -328px;
+    bottom: 40px; z-index: 1;}
+.contact-img img {width: 350px; }
+
+@media (max-width: 1280px) {
+    .contact-img {right: -280px;}
+    .contact-img img {width: 300px; }
+}
+
+@media (max-width: 1199px) {
+    .contact-img {right: -260px;}
+    .contact-img img {width: 280px; }
+}
+
+@media (max-width: 1080px) {
+    .contact-img {right: -240px;}
+    .contact-img img {width: 260px; }
+}
+
+@media (max-width: 991px) {
+    .contact-img {display: none;}
+
+
+}

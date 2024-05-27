@@ -1,0 +1,108 @@
+
+@import url('../../../public/assets/css/loader.css');
+@import url('../../../public/plugins/apex/apexcharts.css');
+@import url('../../../public/assets/css/dashboard/dash_1.css');
+/* @import url('../../../public/plugins/table//datatable/datatables.css');
+@import url('../../../public/plugins/table/datatable/dt-global_style.css'); */
+@import url('../../../public/assets/css/components/custom-modal.css');
+@import url('../../../public/plugins/loaders/custom-loader.css');
+@import url('../../../public/assets/css/apps/todolist.css');
+
+@import url('../../../public/web/css/custom.css');
+@import url('../../../public/web/css/sidebar.css');
+@import url('../../../public/web/css/global.css');
+
+/* 
+import '../src/public/web/css/custom.css';
+import '../src/public/web/css/sidebar.css';
+import '../src/public/web/css/global.css'; */
+/* @import url('../../../public/assets/css/authentication/form-2.css'); */
+
+
+.modal-header {
+    border-bottom: 0px !important;
+}
+
+.form-view-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    /* font-size: 1rem; */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f1f2f3;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    cursor: not-allowed;
+}
+
+.pg-text-secondary {
+    color: #ced5db !important;
+}
+
+.mail-box-container {
+    position: relative;
+    display: flex;
+    border-radius: 6px;
+    background: #fff;
+    /* -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+    margin: -26px -20px -25px -20px;
+      margin-top: -26px;
+      margin-bottom: -25px; */
+}
+
+
+.form-view-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    /* font-size: 1rem; */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f1f2f3;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    cursor: not-allowed;
+}
+
+.pg-text-secondary {
+    color: #ced5db !important;
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* background: rgba(0, 0, 0, .4); */
+    background: rgba(255, 255, 255, 0.272);
+    /* background: #fff; */
+    z-index: 1029 !important;
+    opacity: .7;
+    transition: all 0.5s ease-in-out;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+  
+.overlay.show {
+    display: block;
+}
+
+.back-to-home{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+}

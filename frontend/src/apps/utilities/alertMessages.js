@@ -1,0 +1,30 @@
+const alertMessages = {
+    "saveDataMsg": "Data saved successfully.",
+    "updateDataMsg": "Data updated successfully.",
+    "deleteDataMsg": "Data deleted successfully.",
+    "errorMsg": "Error occurred. Please try again after sometime.",
+    "allfieldsRequiredMsg": "All fields are required.",
+    "saveDataConfirmationMsg": "Are you sure you want to save this data ?",
+    "groupFieldRequired": "Activity Group's Name field is required.",
+    "regionFieldRequired": "Activity Group's Region Type field is required.",
+    "activityLevelFieldRequired": "Activity Group's Level Type field is required.",
+    "stateFieldRequired": "Activity Group's State field is required.",
+    "districtFieldRequired": "Activity Group's District field is required.",
+    "blockFieldRequired": "Activity Group's Block field is required.",
+    "schemeFieldRequired": "Activity Group's Scheme field is required.",
+    "majorComponentFieldRequired": "Activity Group's Major Component field is required.",
+    "subComponentFieldRequired": "Activity Group's Sub Component field is required.",
+    "activityFieldRequired": "Activity Group's Master Activity field is required.",
+    "subActivityFieldRequired": "Activity Group's Sub Activity field is required.",
+    "groupNameRequiredMsg": "Group Name is required",
+    "groupDescriptionRequiredMsg": "Group Description is required",
+    "groupCodeRequiredMsg": "Group Code is required",
+    "duplicateNameMsg": "Duplicate Name entered.",
+    "duplicateCodeMsg": "Duplicate Code entered.",
+    "deleteDataConfirmationMsg": "Are you sure you want to delete this data ?",
+    "saveBeforeProceedMsg": "Please save previous row before editing a new row.",
+    "groupTypeRequiredMsg": "Group Type is required",
+    "disable2FAConfirmationMsg": "Are you sure to disable Two Factor Authentication ?"
+}
+
+export default alertMessages;

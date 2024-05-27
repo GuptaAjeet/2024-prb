@@ -1,0 +1,146 @@
+.crow{
+/*      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,251,251,1) 30%, rgba(249,249,249,1) 70%, rgba(255,255,255,1) 90%); */
+background: #ffffff;
+     font-size: 14px;
+}
+
+.ctd{
+     background: #f5f5f5;
+}
+
+.ctr {
+     background: linear-gradient(180deg, rgba(251,251,251,1) 0%, rgba(241,241,241,1) 50%, rgba(251,251,251,1) 100%);
+}
+
+.cthead{
+     font-size: 14px;
+    text-align: center;
+}
+
+.cthead th {font-weight: normal;}
+
+.cthead_tr{
+     text-align: center;
+     vertical-align: middle;
+     background: #001633;
+     color: #fff;
+}
+
+.f2_border {
+     border-color: #f2f2f2;
+}
+
+.bigEdit{
+     font-size: 18px;
+}
+
+.btnDiv{
+     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 50%, rgba(255,255,255,1) 100%);
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+  
+    border-radius: 4px;
+    font-size: 14px !important;
+    box-shadow: 1px 2px 2px #666;
+    color:#333 !important;
+}
+
+.btnSdiv{
+     background: 
+     linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 50%, rgba(255,255,255,1) 100%);
+     padding: 5px;
+     width: 80px;
+     text-align: center;
+
+     border-radius: 4px;
+     font-size: 14px !important;
+     box-shadow: 1px 2px 2px #666;
+}
+
+.cc{
+     text-align: center;
+     text-align: -webkit-center;
+}
+
+.ssad{
+     text-align: center;
+     background: #001633;
+     color: #fff
+}
+
+.cdiv{
+     font-size: 25px !important;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sactive {
+     color:#fff;
+     background: #1e6071!important;
+}
+
+.sactive :hover {
+     color:#fff !important;
+}
+
+.slist_group{
+     font-size: larger !important;
+}
+
+.s_title{
+     font-weight: bolder !important;
+     color: #ff8800
+}
+
+.slgi {
+     border-radius: unset !important;
+}
+
+.scard{
+     border-radius: unset !important;
+     box-shadow: -5px 5px 7px #dbdbdb;
+}
+
+.scardheader1 {
+     color:#fff;
+     background: #0088ab !important;
+}
+
+.scardheader2 {
+     color:#fff;
+     background: #029fc7 !important;
+}
+.scardheader3 {
+     color:#fff;
+     background: linear-gradient(90deg, rgba(105,105,105,1) 0%, rgba(105,105,105,1) 50%, rgba(147,147,147,1) 100%) !important;
+}
+.scardheader4 {
+     color:#fff;
+     background: #029fc7 !important;
+}
+
+.stxt16 {
+     font-size: 16px;
+}
+.stxtlarger {
+     font-size: larger;
+}
+
+.activeDomain{
+     color: #000 !important;
+}
+
+.dis {
+     pointer-events: none !important;
+}
+
+.ena {
+     pointer-events: all !important;
+}
+
+.statbox .badge{font-weight: normal;}
+
+
